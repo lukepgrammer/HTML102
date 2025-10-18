@@ -1,0 +1,243 @@
+
+/* Links e imagem layout */
+
+section img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px; /* definir uma largura min-max para as imagens melhora o enquadramento em telas mobile */
+    height: auto;
+    border-radius: 8px; 
+    /* bordas arredondadas, não sei, fica mais apresentável */
+}
+
+#texto-principal{
+    display: block;
+    margin: 32px auto;
+    max-width: 800px;
+    padding: 40px;
+    color: #1a1a1a;
+    font-size: 24px;
+    font-family:'Segoi UI', sans-serif;
+    border: 1px solid  rgb(255,255,255, 0.3);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+
+}
+
+picture img, picture source{
+    display: block;
+    margin: 16px auto;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+}
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    background-color: #559dfa;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+/* Barra de navegação */
+
+nav {
+    padding: 1rem;
+    background: rgb(25, 115, 233);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+
+}
+
+h1 {
+    /* Não sei o que eu fiz aqui, mas consegui deixar o "logo" e a frase encaixados certinhos */
+    background: rgb(25, 115, 233);
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+mark {
+    background: rgb(86, 142, 227);
+}
+
+
+mark:hover{
+    /* 
+    Efeito ao passar o mouse sobre a frase destacada
+    Não tive razão nenhuma pra fazer isso, só queria praticar o hover mesmo.
+    */
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* Container da página de projetos */
+
+.projetos-container h1, h2, h3{
+    background-color: #71a4f7;
+    border-radius: 8px;
+    font-size: 24px;
+    min-width: 400px;
+    max-width: 800px;
+    margin: 32px auto;
+    text-align: center;
+
+}
+
+
+
+.projetos-container p {
+    display: block;
+    margin: 32px auto;
+
+}
+
+.projetos-container{
+    display: flex;
+    margin: 32px auto;
+    flex-direction: column;
+    background-color: #d8e3f0;
+    padding: 20px;
+    border-radius: 3px;
+    max-width: 800px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 60;
+    font-size: 28;
+    box-shadow: 0 16px 24px rgba(0,0,0, 0.25);
+}
+
+
+
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.rodape button{
+    display: flex;
+    flex-direction: row;
+    margin: 32px auto;
+    padding: 24px;
+    background-color:#559dfa;
+    color: white;
+    border: rgba(255, 255, 255, 0.5)
+}
+
+.rodape button:hover {
+    background-color: #194f85;
+    border: 1px solid rgb(137, 146, 152);
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    cursor: pointer;
+
+}
+
+/* Formulário layout */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 23px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0, 0.5);
+}
+
+fieldset{
+    border: none;
+    padding: auto;
+    margin: auto;
+    margin-right: 20px;
+}
+
+legend {
+    margin: auto;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #194f85;
+}
+
+label{
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    font-weight: 60px;
+}
+
+/* Campos do formulário yeee */
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px; /* Espaço das caixas */
+    border: 2px solid #4f86c5;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* Foco ao clicar em um dos campos */
+input:focus, select:focus, textarea:focus{
+    border-color: #194f85;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(34,102,167, 0.12); /* sombra suave ao selecionar */
+}
+
+input:invalid{
+    border-color: #D64545;
+    box-shadow: 0 0 0 4px rgb(183, 36, 29, 0.12);
+}
+
+button[type="submit"], button[type="reset"]{
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]{
+    background: #2266A7;
+    color: white;
+}
+
+button[type="reset"]{
+    background: #f0f2f5;
+}
+
+#footer-cadastro{
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+#footer-principal{
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
