@@ -140,6 +140,8 @@ mark:hover{
     text-align: center;
 }
 
+
+
 .rodape button{
     display: flex;
     flex-direction: row;
@@ -147,17 +149,16 @@ mark:hover{
     padding: 24px;
     background-color:#559dfa;
     color: white;
-    border: rgba(255, 255, 255, 0.5)
+    border: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
 }
 
 .rodape button:hover {
     background-color: #194f85;
-    border: 1px solid rgb(137, 146, 152);
-    display: flex;
-    flex-direction: column;
-    padding: 28px;
+    border: 2px solid rgb(137, 146, 152);
+    border-radius: 8px;
     cursor: pointer;
-
+    
 }
 
 /* Formulário layout */
@@ -201,7 +202,6 @@ input, select, textarea {
     font-size: 16px;
     margin-bottom: 12px;
 }
-
 /* Foco ao clicar em um dos campos */
 input:focus, select:focus, textarea:focus{
     border-color: #194f85;
@@ -240,4 +240,11 @@ button[type="reset"]{
     margin: 0 auto;
     padding: 1rem;
     text-align: center;
+}
+
+#footer-principal a:hover {
+    display: inline-block;
+    padding: 0px;
+    background-color: none;
+    border-radius: 0px;
 }
