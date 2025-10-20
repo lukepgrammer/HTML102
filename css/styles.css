@@ -1,250 +1,290 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Espaçamento modular teste */
+/* Achei bem impraticável, mas já que a atividade pede 
+   talvez não seja um uso 100% adequado ainda, mas estou me guiando
+   pela atividade
+*/
+
+:root {
+  /* Cores neutras */
+  --color-white: #ffffff;
+  --color-neutral-light: #d8e3f0; /* cor de fundo dos containers */
+  --color-neutral-mid: #4f86c5; /* borda padrão dos elementos */
+  --color-neutral-dark: #194f85; /* Textos e legendas escuras */
+  /* ---------------------------------------------------------------------*/
+
+  /* Cores primarias da ONG */
+  --color-primary: #559dfa; /* Links e botões, cor principal */
+  --color-primary-light: #71a4f7; /* Titulos e fundos */
+  --color-primary-dark: #2266a7; /* Barra de navegação */
+
+  /*-----------------------------------------------------------------------*/
+
+  /* Cores secundárias */
+
+  --color-secondary: rgb(86, 142, 277); /* highlight texto */
+  --color-alert: #d64545; /* Input inválido no campo do formulário */
+  --color-border-hover: rgb(137, 146, 152); /* bordas ao usar o hover */
+  --color-secondary-alt: rgb(25, 115, 233); /* nav background */
+  /*-----------------------------------------------------------------------*/
+
+  /* 4 point grid system be like 
+     Segundo o que eu ainda pesquisando, a medida em rem é mais moderna e melhor para responsividade das páginas 
+     */
+
+  --space-1: 0.5rem; /* 8 px */
+  --space-2: 1rem; /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem; /* 32px */
+  --space-5: 3rem; /* 48px */
+  --space-6: 4rem; /* 64px */
+}
 
 /* Links e imagem layout */
 
 section img {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
-    max-width: 800px; /* definir uma largura min-max para as imagens melhora o enquadramento em telas mobile */
-    height: auto;
-    border-radius: 8px; 
-    /* bordas arredondadas, não sei, fica mais apresentável */
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px; /* definir uma largura min-max para as imagens melhora o enquadramento em telas mobile */
+  height: auto;
+  border-radius: 8px;
+  /* bordas arredondadas, não sei, fica mais apresentável */
 }
 
-#texto-principal{
-    display: block;
-    margin: 32px auto;
-    max-width: 800px;
-    padding: 40px;
-    color: #1a1a1a;
-    font-size: 24px;
-    font-family:'Segoi UI', sans-serif;
-    border: 1px solid  rgb(255,255,255, 0.3);
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.25);
+#texto-principal {
+  display: block;
+  margin: var(--space-4) auto;
+  max-width: 60ch;
+  padding: var(--space-5);
+  color: #1a1a1a;
+  font-size: var(--space-3);
+  font-family: "Segoi UI", sans-serif;
+  border: 1px solid rgb(255, 255, 255, 0.3);
+  border-radius: var(--space-2);
+  background-color: rgba(255, 255, 255, 0.25);
 
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-picture img, picture source{
-    display: block;
-    margin: 16px auto;
-    margin-bottom: 4px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 800px;
+picture img,
+picture source {
+  display: block;
+  margin: var(--space-2) auto;
+  margin-bottom: var(--space-1);
+  border-radius: var(--space-1);
+  width: 90%;
+  max-width: 800px;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
-    color: rgb(255, 255, 255);
-    background-color: #559dfa;
-    border-radius: 4px;
-    padding: 16px;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  padding: var(--space-2);
 }
 
 /* Barra de navegação */
 
 nav {
-    padding: 1rem;
-    background: rgb(25, 115, 233);
+  padding: 1rem;
+  background: var(--color-secondary-alt);
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-    display: inline;
+  display: inline;
 }
 
 nav ul li a {
-    color: white;
-
+  color: white;
 }
 
 h1 {
-    /* Não sei o que eu fiz aqui, mas consegui deixar o "logo" e a frase encaixados certinhos */
-    background: rgb(25, 115, 233);
-    color: white;
-    padding: 1rem;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  /* Não sei o que eu fiz aqui, mas consegui deixar o "logo" e a frase encaixados certinhos */
+  background: var(--color-secondary-alt);
+  color: white;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 mark {
-    background: rgb(86, 142, 227);
+  background: var(--color-secondary);
 }
 
-
-mark:hover{
-    /* 
+mark:hover {
+  /* 
     Efeito ao passar o mouse sobre a frase destacada
     Não tive razão nenhuma pra fazer isso, só queria praticar o hover mesmo.
     */
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
 }
-
-
 
 /* Container da página de projetos */
 
-.projetos-container h1, h2, h3{
-    background-color: #71a4f7;
-    border-radius: 8px;
-    font-size: 24px;
-    min-width: 400px;
-    max-width: 800px;
-    margin: 32px auto;
-    text-align: center;
-
+.projetos-container h1,
+h2,
+h3 {
+  background-color: var(--color-primary-light);
+  border-radius: var(--space-1);
+  font-size: var(--space-3);
+  min-width: 400px;
+  max-width: 800px;
+  margin: var(--space-4) auto;
+  text-align: center;
 }
-
-
 
 .projetos-container p {
-    display: block;
-    margin: 32px auto;
-
+  display: block;
+  margin: 32px auto;
+  font-size: 18px;
 }
 
-.projetos-container{
-    display: flex;
-    margin: 32px auto;
-    flex-direction: column;
-    background-color: #d8e3f0;
-    padding: 20px;
-    border-radius: 3px;
-    max-width: 800px;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 60;
-    font-size: 28;
-    box-shadow: 0 16px 24px rgba(0,0,0, 0.25);
+.projetos-container {
+  display: flex;
+  margin: var(--space-4) auto;
+  flex-direction: column;
+  background-color: #d8e3f0;
+  padding: var(--space-3);
+  border-radius: 3px;
+  max-width: 800px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: var(--space-6);
+  font-size: var(--space-3);
+  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25);
 }
-
-
-
 
 .rodape {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-
-
-.rodape button{
-    display: flex;
-    flex-direction: row;
-    margin: 32px auto;
-    padding: 24px;
-    background-color:#559dfa;
-    color: white;
-    border: rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
+.rodape button {
+  display: flex;
+  flex-direction: row;
+  margin: var(--space-4) auto;
+  padding: var(--space-3);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
 }
 
 .rodape button:hover {
-    background-color: #194f85;
-    border: 2px solid rgb(137, 146, 152);
-    border-radius: 8px;
-    cursor: pointer;
-    
+  background-color: var(--color-neutral-dark);
+  border: 2px solid rgb(137, 146, 152);
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* Formulário layout */
 form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 23px;
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0,0,0, 0.5);
+  max-width: 600px;
+  margin: 20px auto;
+  padding: var(--space-3);
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-fieldset{
-    border: none;
-    padding: auto;
-    margin: auto;
-    margin-right: 20px;
+fieldset {
+  border: none;
+  padding: auto;
+  margin: auto;
+  margin-right: 20px;
 }
 
 legend {
-    margin: auto;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 16px;
-    color: #194f85;
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--color-neutral-dark);
 }
 
-label{
-    display: block;
-    margin-bottom: 6px;
-    margin-top: 6px;
-    font-weight: 60px;
+label {
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  font-weight: 60px;
 }
 
 /* Campos do formulário yeee */
 
-input, select, textarea {
-    width: 100%;
-    padding: 10px; /* Espaço das caixas */
-    border: 2px solid #4f86c5;
-    border-radius: 8px;
-    font-size: 16px;
-    margin-bottom: 12px;
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px; /* Espaço das caixas */
+  border: 2px solid var(--color-neutral-mid);
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 /* Foco ao clicar em um dos campos */
-input:focus, select:focus, textarea:focus{
-    border-color: #194f85;
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(34,102,167, 0.12); /* sombra suave ao selecionar */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-neutral-dark);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(34, 102, 167, 0.12); /* sombra suave ao selecionar */
 }
 
-input:invalid{
-    border-color: #D64545;
-    box-shadow: 0 0 0 4px rgb(183, 36, 29, 0.12);
+input:invalid {
+  border-color: var(--color-alert);
+  box-shadow: 0 0 0 4px rgb(183, 36, 29, 0.12);
 }
 
-button[type="submit"], button[type="reset"]{
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
+button[type="submit"],
+button[type="reset"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
-button[type="submit"]{
-    background: #2266A7;
-    color: white;
+button[type="submit"] {
+  background: var(--color-primary-dark);
+  color: white;
 }
 
-button[type="reset"]{
-    background: #f0f2f5;
+button[type="reset"] {
+  background: #f0f2f5;
 }
 
-#footer-cadastro{
-    text-align: center;
-    margin: 0 auto;
-    padding: 1rem;
+#footer-cadastro {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-#footer-principal{
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
+#footer-principal {
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
 }
 
 #footer-principal a:hover {
-    display: inline-block;
-    padding: 0px;
-    background-color: none;
-    border-radius: 0px;
+  display: inline-block;
+  padding: 0px;
+  background-color: none;
+  border-radius: 0px;
 }
