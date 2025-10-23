@@ -93,6 +93,156 @@ a {
 }
 
 
+
+/* Responsividade media-queries */
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  
+  body {
+    font-size: var(--font-padrao-peq); /* 16px */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    padding: var(--space-2);
+  }
+
+  nav ul {
+    flex-direction: column; /* Menu vertical */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 0;
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    padding: 0.5rem 0;
+    text-align: center;
+
+  }
+
+  #texto-principal {
+    padding: var(--space-3);
+    font-size: var(--font-padrao-med);
+    max-width: 90%;
+  }
+
+  .projetos-container {
+    padding: var(--space-2);
+    font-size: var(--font-padrao-med);
+  }
+
+  .Cartão {
+    width: 90%;
+    max-width: 400px;
+    padding: 16px;
+    margin: var(--space-2) auto;
+    font-size: var(--font-padrao-peq);
+  }
+
+  .Cartão-texto {
+    max-width: 70%;
+  }
+  
+
+  footer, .rodape, #footer-principal, #footer-cadastro {
+    font-size: var(--font-padrao-peq);
+    padding: var(--space-2);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Tablets -- Alguém usa isso em pleno século 2025? LOL*/
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: var(--font-padrao-gra); /* 24px */
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #texto-principal {
+    max-width: 80%;
+    font-size: var(--font-padrao-gra);
+    padding: var(--space-4);
+  }
+
+  .projetos-container {
+    padding: var(--space-3);
+    font-size: var(--font-padrao-gra);
+  }
+
+  .Cartão {
+    width: 80%;
+    font-size: var(--font-padrao-med);
+  }
+
+  footer, .rodape, #footer-principal, #footer-cadastro {
+    font-size: var(--font-padrao-med);
+    padding: var(--space-3);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    width: 95%;
+  }
+}
+
+/* PCs e Desktops*/
+
+@media (min-width: 1025px) {
+  h1 {
+    font-size: var(--font-padrao-giga); /* 32px */
+  }
+
+  #texto-principal {
+    max-width: 60ch;
+    font-size: var(--font-padrao-gra);
+  }
+
+  .projetos-container {
+    padding: var(--space-4);
+    font-size: var(--font-padrao-gra);
+  }
+
+  .Cartão {
+    width: 600px;
+    font-size: var(--font-padrao-gra);
+  }
+
+  footer, .rodape, #footer-principal, #footer-cadastro {
+    font-size: var(--font-padrao-med);
+    padding: var(--space-4);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    max-width: 800px;
+  }
+}
+
+
+
 /* Efeito hoover limitado ao menu, antes afetava globalmente qualquer elemento <a> da página */
 nav a:hover {
   color: var(--color-white);
@@ -102,6 +252,16 @@ nav a:hover {
 }
 
 /* Barra de navegação */
+
+.frase-legal {
+  display: block;
+  font-style: italic;
+  color: black;
+  padding: 0.5rem;
+  margin: 0;
+  font-size: var(--font-padrao-med);
+}
+
 
 nav {
   padding: 1rem;
