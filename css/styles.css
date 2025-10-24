@@ -129,6 +129,17 @@ a {
     text-align: center;
 
   }
+  /* Enquadramento do titulo Voluntários - ONG ELdermaxxing no celular */
+  legend {
+   text-align: center;
+   display: block;
+   font-weight: bold;
+   font-size: var(--font-padrao-med);
+   color: var(--color-neutral-dark);
+   margin: 0 auto 1 rem auto;
+   width: 100%;
+   box-sizing: border-box;
+  }
 
   #texto-principal {
     padding: var(--space-3);
