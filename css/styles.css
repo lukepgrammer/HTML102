@@ -115,7 +115,8 @@ a {
 
 
 
-/* Responsividade media-queries */
+/* Responsividade media-queries - Breakpoints */
+
 
 /* Celulares */
 
@@ -290,9 +291,48 @@ a {
   }
 }
 
+/* Celulares com telas maiores */
+@media (min-width: 601px) and (max-width: 768px) {
+  body {
+    font-size: var(--font-padrao-peq2); /* 18px */
+  }
+
+  h1 {
+    font-size: var(--font-padrao-gra); /* 24px */
+    padding: var(--space-2);
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  #texto-principal {
+    max-width: 90%;
+    font-size: var(--font-padrao-gra);
+    padding: var(--space-3);
+  }
+
+  .projetos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+    gap: var(--space-2);
+  }
+
+  .cartao-projeto {
+    padding: var(--space-2);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    width: 95%;
+    max-width: 700px;
+  }
+}
+
 /* Tablets -- Alguém usa isso em pleno século 2025? LOL*/
 
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   h1 {
     font-size: var(--font-padrao-gra); /* 24px */
   }
@@ -361,6 +401,37 @@ a {
     max-width: 800px;
   }
 }
+
+
+/* PCs e Desktop grandes (1440px >)*/
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  #texto-principal {
+    max-width: 70ch; /* mais largo para aproveitar espaço */
+    font-size: var(--font-padrao-giga);
+  }
+
+  .projetos-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards por linha */
+    gap: var(--space-4);
+  }
+
+  .cartao-projeto-principal {
+    width: 1200px;
+    padding: var(--space-5);
+  }
+
+  section img,
+  picture img,
+  picture source {
+    max-width: 1000px;
+  }
+}
+
 
 /* Efeito hoover limitado ao menu, antes afetava globalmente qualquer elemento <a> da página */
 nav a:hover {
