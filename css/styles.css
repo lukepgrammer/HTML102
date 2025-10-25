@@ -111,6 +111,10 @@ a {
   cursor: pointer;
 }
 
+
+
+
+
 /* Responsividade media-queries */
 
 /* Celulares */
@@ -206,18 +210,65 @@ a {
     max-width: 90%;
   }
 
-  .projetos-container {
-    padding: var(--space-2);
-    font-size: var(--font-padrao-med);
+
+  /* Cards de projeto */
+
+  .cartao-projeto-principal {
+    width: 95%;
+    padding: var(--space-3);
+    margin: var(--space-2) auto;
   }
 
-  .Cartão {
-    width: 90%;
-    max-width: 400px;
-    padding: 16px;
-    margin: var(--space-2) auto;
-    font-size: var(--font-padrao-peq);
+  .cartao-projeto-principal > p:first-of-type {
+    padding: 0 var(--space-1);
+    margin-bottom: var(--space-3);
+    font-size: var(--font-padrao-peq2);
+    max-width: 60ch;
   }
+
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+    padding: 0;
+  }
+
+  .cartao-projeto {
+    padding: var(--space-2);
+    width: 100%;
+    margin: 0;
+  }
+
+  .cartao-projeto .Cartão-subtitulo {
+    font-size: var(--font-padrao-peq2);
+    padding: 0 var(--space-1);
+    margin: 0 0 var(--space-2) 0;
+    width: 100%;
+    display: block;
+    overflow-wrap: break-word;
+  }
+
+  .cartao-projeto .Cartão-texto {
+    padding: 0 var(--space-1);
+    font-size: var(--font-padrao-peq);
+    width: 100%;
+  }
+
+  /* Cards página de teste */
+
+  .Cartão {
+    width: 95%;
+    padding: var(--space-3);
+    margin: var(--space-2) auto;
+  }
+
+  .Cartão > p:first-of-type {
+    padding: 0 var(--space-1);
+    margin-bottom: var(--space-3);
+    font-size: var(--font-padrao-peq2);
+  }
+
+
 
   .Cartão-texto {
     max-width: 70%;
@@ -257,10 +308,6 @@ a {
     padding: var(--space-4);
   }
 
-  .projetos-container {
-    padding: var(--space-3);
-    font-size: var(--font-padrao-gra);
-  }
 
   .Cartão {
     width: 80%;
@@ -294,10 +341,6 @@ a {
     font-size: var(--font-padrao-gra);
   }
 
-  .projetos-container {
-    padding: var(--space-4);
-    font-size: var(--font-padrao-gra);
-  }
 
   .Cartão {
     width: 600px;
@@ -383,39 +426,7 @@ mark:hover {
   cursor: pointer;
 }
 
-/* Container da página de projetos */
 
-.projetos-container h1,
-h2,
-h3 {
-  background-color: var(--color-primary-light);
-  border-radius: var(--space-1);
-  font-size: var(--font-padrao-gra);
-  min-width: 400px;
-  max-width: 800px;
-  margin: var(--space-4) auto;
-  text-align: center;
-}
-
-.projetos-container p {
-  display: block;
-  margin: 32px auto;
-  font-size: 18px;
-}
-
-.projetos-container {
-  display: flex;
-  margin: var(--space-4) auto;
-  flex-direction: column;
-  background-color: #d8e3f0;
-  padding: var(--space-3);
-  border-radius: 3px;
-  max-width: 800px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: var(--space-6);
-  font-size: var(--font-padrao-gra);
-  box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25);
-}
 
 .rodape {
   display: flex;
@@ -520,6 +531,7 @@ button[type="reset"] {
   resize: none;
 }
 
+/* Rodapé das páginas */
 #footer-cadastro {
   text-align: center;
   margin: 0 auto;
@@ -539,6 +551,90 @@ button[type="reset"] {
   border-radius: 0px;
 }
 
+/* Divisão dos cartões de projetos.html e teste.html */
+
+/* Cartão de projetos -> projetos.html */
+
+
+/* Container grid */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Estilo para os cards da área de projetos */
+
+/* Container principal da area de projetos -> projetos.html */
+.cartao-projeto-principal {
+  border: 4px solid var(--color-primary-light);
+  border-radius: var(--space-2);
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0,0,0, 0.9);
+  color: var(--color-white);
+  padding: var(--space-4); /* Texto não gruda mais nas bordas */
+}
+
+/* Texto introdutório do cartão */
+
+.cartao-projeto-principal > p:first-of-type {
+  max-width: 60ch; /* limite de 60 caracteres */
+  margin: 0 auto var(--space-4) auto;
+  padding: 0 var(--space-2); /* padding horizontal */
+  font-size: var(--font-padrao-med);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cartao-projeto {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-primary-light);
+  border-radius: var(--space-2);
+  padding: var(--space-3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+
+}
+
+.cartao-projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0, 0.3);
+  border-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Subtitulo dentro dos cards */
+.cartao-projeto .Cartão-subtitulo {
+  background: none;
+  border-bottom: 2px solid var(--color-primary);
+  padding: 0 var(--space-1) var(--space-1) var(--space-1);
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-padrao-med);
+  text-align: left;
+  width: auto;
+  display: block;
+  max-width: 100%;
+  overflow-wrap: break-word; /* Quebra de palavras */
+}
+
+/* Texto dentro dos cards */
+.cartao-projeto .Cartão-texto {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0 var(--space-1);
+  line-height: 1.6;
+  font-size: var(--font-padrao-peq);
+}
+
+/* Cartão da área de testes -> teste.html */
+/* Apesar de repetir a mesma classe com configurações diferentes
+/* o cartão da área de testes quebra se eu remover essa configuração abaixo
+/* ainda não entendi o porquê, então vou deixar aqui
+*/
 .Cartão {
   border: 4px solid var(--color-primary-light);
   border-radius: var(--space-1);
