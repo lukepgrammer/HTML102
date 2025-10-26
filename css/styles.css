@@ -550,7 +550,7 @@ legend {
 label {
   display: block;
   margin: var(--space-1) 0;
-  font-weight: 600;
+  /* font-weight: 600; Letras da label ficam com efeito bold */
   font-size: var(--font-padrao-peq2);
 }
 
