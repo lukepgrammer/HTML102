@@ -52,6 +52,56 @@
   --font-padrao-giga: 2rem; /* 32px */
 }
 
+
+/* 
+============================================
+SISTEMA DE GRID
+
+Ficou super torto isso, não vou usar
+============================================
+*/
+
+/* Container index - página principal 
+/* Elementos sections maiores como o texto e footer principal
+/*
+*/
+
+/* .container-index {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+/* Linha row - substitui as divs internas quando for dividir as colunas */
+/* .row-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+} */
+
+
+/* Colunas base */
+/* [class^="col-"]{
+  padding: var(--space-2);
+  flex: 0 0 auto;
+} */
+
+/* 12 colunas
+  .col-1 { width: 8.33%; }
+  .col-2 { width: 16.66%; }
+  .col-3 { width: 25%; }
+  .col-4 { width: 33.33%; }
+  .col-5 { width: 41.66%; }
+  .col-6 { width: 50%; }
+  .col-7 { width: 58.33%; }
+  .col-8 { width: 66.66%; }
+  .col-9 { width: 75%; }
+  .col-10 { width: 83.33%; }
+  .col-11 { width: 91.66%; }
+  .col-12 { width: 100%; } */
+
+
 /* Links e imagem layout */
 
 section img {
@@ -68,7 +118,7 @@ section img {
   display: block;
   margin: var(--space-4) auto;
   max-width: 60ch;
-  padding: var(--space-5);
+  padding: var(--space-4);
   color: #1a1a1a;
   font-size: var(--font-padrao-gra);
   font-family: "Segoi UI", sans-serif;
@@ -204,6 +254,7 @@ a {
     width: 100%;
     box-sizing: border-box;
   }
+  
 
   #texto-principal {
     padding: var(--space-3);
@@ -275,13 +326,6 @@ a {
     max-width: 70%;
   }
 
-  footer,
-  .rodape,
-  #footer-principal,
-  #footer-cadastro {
-    font-size: var(--font-padrao-peq);
-    padding: var(--space-2);
-  }
 
   section img,
   picture img,
@@ -354,14 +398,6 @@ a {
     font-size: var(--font-padrao-med);
   }
 
-  footer,
-  .rodape,
-  #footer-principal,
-  #footer-cadastro {
-    font-size: var(--font-padrao-med);
-    padding: var(--space-3);
-  }
-
   section img,
   picture img,
   picture source {
@@ -385,14 +421,6 @@ a {
   .Cartão {
     width: 600px;
     font-size: var(--font-padrao-gra);
-  }
-
-  footer,
-  .rodape,
-  #footer-principal,
-  #footer-cadastro {
-    font-size: var(--font-padrao-med);
-    padding: var(--space-4);
   }
 
   section img,
@@ -602,26 +630,6 @@ button[type="reset"] {
   resize: none;
 }
 
-/* Rodapé das páginas */
-#footer-cadastro {
-  text-align: center;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-#footer-principal {
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-}
-
-#footer-principal a:hover {
-  display: inline-block;
-  padding: 0px;
-  background-color: none;
-  border-radius: 0px;
-}
-
 /* Divisão dos cartões de projetos.html e teste.html */
 
 /* Cartão de projetos -> projetos.html */
@@ -803,5 +811,77 @@ a tag !important garante que as regras sejam priorizadas acima de tudo
     top: 12px !important;
     right: 16px !important;
     font-size: 1.9rem !important;
+  }
+}
+
+/* Footer maxxing - Estilizado igual o header */
+#footer-principal,
+#footer-cadastro,
+.rodape {
+  background: var(--color-secondary-alt);
+  color: var(--color-white);
+  padding: var(--space-4);
+  text-align: center;
+  margin-top: var(--space-5);
+  border-radius: 8px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+/* Titulos dos footers */
+#footer-principal h3,
+#footer-cadastro h3 {
+  color: var(--color-white);
+  font-size: var(--font-padrao-med);
+  padding-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+/* Links no footer das páginas */
+
+#footer-principal a,
+#footer-cadastro a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin: 0 var(--space-1);
+  padding: var(--space-1) var(--space-2);
+}
+
+#footer-principal a:hover,
+#footer-cadastro a:hover {
+  color: var(--color-alert);
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--space-1);
+}
+
+/* Paragrafos do footer das páginas */
+#footer-principal p,
+#footer-cadastro p {
+  margin: var(--space-2) 0;
+  line-height: 1.5;
+}
+
+/* footer de todas as páginas no celular */
+
+@media (max-width: 600px){
+  #footer-principal,
+  #footer-cadastro,
+  .rodape {
+    padding: var(--space-3);
+    font-size: var(--font-padrao-peq);
+  }
+
+  #footer-principal h3,
+  #footer-cadastro h3 {
+    font-size: var(--font-padrao-peq2);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  #footer-principal,
+  #footer-cadastro,
+  .rodape {
+    padding: var(--space-4);
+    font-size: var(--font-padrao-med);
   }
 }
